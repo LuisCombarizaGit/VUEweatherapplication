@@ -2,7 +2,13 @@
   <div id="app">
     <main>
       <div class="search-box">
-        <input type="text" class="search-bar" placeholder="Search.." />
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Search.."
+          v-model="query"
+          @keypress="fetchWeather"
+        />
       </div>
 
       <div class="weather-wrap">
@@ -31,7 +37,22 @@ export default {
   data() {
     return {
       api_key: "98b5ba2ee69aa64434fb7d86727ae023",
+      url_base: "https://api.openweathermap.org/data/2.5/",
+      query: "",
+      weather: {},
     };
+  },
+
+  methods: {
+    fetchWeather(e) {
+      if (e.key == "Enter") {
+        fetch(
+          `${this.api_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`
+        ).then((res) => {
+          return;
+        });
+      }
+    },
   },
 };
 </script>
@@ -67,7 +88,6 @@ main {
   text-align: center;
   max-width: 380px;
   padding: 10px 15px;
-  margin-bottom: 20px;
   border: none;
   outline: none;
   background-color: rgba(255, 255, 255, 0.3);
@@ -88,10 +108,17 @@ main {
 
 .location-box .location {
   color: #fff;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 52px;
+  font-weight: 1000;
   text-align: center;
-  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 3px rgba(0, 0, 0, 0.913);
+}
+.location-box .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
 }
 
 .weather-box {
