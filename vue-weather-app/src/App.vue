@@ -25,38 +25,48 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "montserrat", sans-serif;
 }
-
 #app {
   background-image: url("./background-img.jpg");
   background-size: cover;
   background-position: bottom;
+  transition: 0.4s;
 }
 
 main {
   min-height: 100vh;
   padding: 25px;
 }
-
 .search-box {
+  padding: 80px;
+  display: flex;
   width: 100%;
   margin-bottom: 30px;
+  justify-content: center;
 }
-
-.search-box .serach-b {
-  display: block;
+.search-box .search-bar {
   width: 100%;
-  padding: 15px;
-
-  color: #313131;
-  font-size: 20px;
-  appearance: none;
+  text-align: center;
+  max-width: 380px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
   border: none;
   outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 16px 16px 16px 16px;
+  border-bottom: 3px solid black;
 
-  background-color: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.6s ease-out;
+}
+
+.search-box .search-bar:focus {
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 16px 0px 16px 0px;
 }
 </style>
