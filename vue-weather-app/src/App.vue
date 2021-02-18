@@ -40,4 +40,23 @@ main {
   min-height: 100vh;
   padding: 25px;
 }
+
+.search-box {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.search-box .serach-b {
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+  color: #313131;
+  font-size: 20px;
+  appearance: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0.5);
+}
 </style>
